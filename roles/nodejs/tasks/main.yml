@@ -1,0 +1,3 @@
+- name: Install node.js for Mac OS X
+  import_tasks: macosx.yml
+  when: ansible_facts['os_family']|lower == 'darwin'

@@ -1,0 +1,26 @@
+- name: Checking for homebrew
+  ansible.builtin.stat:
+    path: /usr/local/bin/brew
+  register: brew
+
+- name: Installing homebrew
+  ansible.builtin.shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: not brew.stat.exists
+
+- name: Updating homebrew
+  community.general.homebrew:
+    update_homebrew: true
+
+- name: Installing cli programs
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - htop
+    - bat
+    - diff-so-fancy
+    - fzf
+    - git
+    - jq
+    - vim
+    - gh

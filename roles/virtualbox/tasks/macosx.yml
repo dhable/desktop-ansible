@@ -1,0 +1,5 @@
+- name: Installing virtualbox
+  community.general.homebrew_cask:
+    name: virtualbox
+    state: present
+    accept_external_app: true

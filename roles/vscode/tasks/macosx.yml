@@ -1,0 +1,18 @@
+- name: Installing VSCode
+  community.general.homebrew_cask:
+    name: visual-studio-code
+    state: present
+    accept_external_apps: true
+
+- name: Installing VSCode CLI
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: 'export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
+
+- name: Installing VSCode Extensions
+  ansible.builtin.shell: code --force --install-extension {{ item }}
+  with_items:
+    - scalameta.metals
+    - rust-lang.rust
+    - golang.go
+    - nwolverson.ide-purescript

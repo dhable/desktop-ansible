@@ -1,0 +1,5 @@
+- name: Install Joplin
+  community.general.homebrew_cask:
+    name: joplin
+    state: present
+    accept_external_apps: true

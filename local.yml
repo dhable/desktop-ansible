@@ -1,0 +1,10 @@
+- hosts: localhost
+  roles:
+    - zsh
+    - cli
+    - terminal
+    - vscode
+    - virtualbox
+    - joplin
+    - rust
+    - nodejs
