@@ -15,16 +15,13 @@ ansible-pull -U https://github.com/dhable/desktop-ansible.git
 
 * Support additional packages
 ** Docker Desktop for Mac OS X
-** Steam
 ** Slack
-** Witch
 
 * Lang Env Setups
-** openjdk 
-** clojure 
 ** scala
 ** purescript
 
 * System Settings
 ** Mac OS X Dock - small, 75% magnification, right side
+** witch settings
 

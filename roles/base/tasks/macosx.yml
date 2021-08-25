@@ -11,7 +11,7 @@
   community.general.homebrew:
     update_homebrew: true
 
-- name: Installing cli programs
+- name: Installing command line tools
   community.general.homebrew:
     name: "{{ item }}"
     state: latest
@@ -24,3 +24,4 @@
     - jq
     - vim
     - gh
+    - zsh

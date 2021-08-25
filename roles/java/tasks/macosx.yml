@@ -1,0 +1,35 @@
+- name: Checking for homebrew
+  ansible.builtin.stat:
+    path: /usr/local/bin/brew
+  register: brew
+
+- name: Installing homebrew
+  ansible.builtin.shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: not brew.stat.exists
+
+- name: Install OpenJDK 11
+  community.general.homebrew:
+    name: openjdk@11
+    state: latest
+    update_homebrew: true
+
+- name: Install OpenJDK (latest)
+  community.general.homebrew:
+    name: openjdk
+    state: latest
+    update_homebrew: true
+
+- name: Install jenv package
+  community.general.homebrew:
+    name: jenv
+    state: latest
+    update_homebrew: true
+
+- name: Install jenv
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+    - { regexp: '^export PATH="$HOME/.jenv/bin:$PATH"', line: 'export PATH="$HOME/.jenv/bin:$PATH"' }
+    - { regexp: '^eval "$(jenv init -)"', line: 'eval "$(jenv init -)"' }

@@ -1,3 +1,12 @@
-- name: Install node.js for Mac OS X
-  import_tasks: macosx.yml
-  when: ansible_facts['os_family']|lower == 'darwin'
+- name: Checking for prior nvm package
+  ansible.builtin.stat:
+    path: ~/.nvm
+  register: nvm
+
+- name: Installing nvm
+  ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+  when: not nvm.stat.exists
+
+- name: Installing node.js
+  ansible.builtin.shell: nvm install node
+  when: not nvm.stat.exists

@@ -1,19 +1,4 @@
-- name: Checking for homebrew
-  ansible.builtin.stat:
-    path: /usr/local/bin/brew
-  register: brew
-
-- name: Installing homebrew
-  ansible.builtin.shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  when: not brew.stat.exists
-
-- name: Install zsh
-  community.general.homebrew:
-    name: zsh
-    state: latest
-    update_homebrew: true
-
-- name: Checking for prior oh-my-zsh installs
+- name: Checking for existing oh-my-zsh install
   ansible.builtin.stat:
     path: ~/.oh-my-zsh
   register: omz
@@ -31,6 +16,6 @@
     - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
     - { regexp: '^DISABLE_UPDATE_PROMPT=', line: 'DISABLE_UPDATE_PROMPT="true"' }
     - { regexp: '^COMPLETION_WAITING_DOTS=', line: 'COMPLETION_WAITING_DOTS="true"' }
-    - { regexp: '^plugins=', line: 'plugins=(git cargo fzf gh node zsh_reload)' }
+    - { regexp: '^plugins=', line: 'plugins=(git cargo fzf node zsh_reload)' }
     - { regexp: '^bindkey', line: 'bindkey -v' }
     - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }

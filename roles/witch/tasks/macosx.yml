@@ -1,5 +1,5 @@
-- name: Installing virtualbox
+- name: Install witch
   community.general.homebrew_cask:
-    name: virtualbox
+    name: witch
     state: present
     accept_external_apps: true
