@@ -1,3 +1,8 @@
-- name: Install Clojure
-  import_tasks: macosx.yml
-  when: ansible_facts['os_family']|lower == 'darwin'
+- name: Checking for clojure
+  ansible.builtin.stat:
+    path: /usr/local/bin/clj
+  register: clj
+
+- name: Install clojure
+  ansible.builtin.shell: bash -c "$(curl https://download.clojure.org/install/linux-install-1.10.3.943.sh)"
+  when: not clj.stat.exists

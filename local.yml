@@ -1,10 +1,14 @@
 - hosts: localhost
   roles:
+    # Programming Languages
+    - rust
+    - nodejs
+    - clojure
+    - scala
+
+    # Desktop Applications
     - terminal
     - vscode
     - virtualbox
     - joplin
-    - rust
-    - nodejs
-    - clojure
     - witch

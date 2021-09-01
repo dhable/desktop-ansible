@@ -9,19 +9,3 @@ It currently only supports Mac OS X but could be extended to support Linux.
 ```
 ansible-pull -U https://github.com/dhable/desktop-ansible.git
 ```
-
-
-## TODO List
-
-* Support additional packages
-** Docker Desktop for Mac OS X
-** Slack
-
-* Lang Env Setups
-** scala
-** purescript
-
-* System Settings
-** Mac OS X Dock - small, 75% magnification, right side
-** witch settings
-

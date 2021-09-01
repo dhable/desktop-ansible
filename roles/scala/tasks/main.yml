@@ -1,0 +1,19 @@
+- name: Checking for existing coursier install
+  ansible.builtin.shell: cs list --help
+  register: cs_exist_check
+  
+- name: Installing coursier
+  ansible.builtin.shell: bash -c "$(curl -fLo cs https://git.io/coursier-cli-\"$(uname | tr LD ld)\") install cs" 
+  when: cs_update_result.rc != 0
+
+- name: Updating coursier
+  ansible.builtin.shell: cs update cs
+  when: cs_exist_check.rc == 0
+
+- name: Install base scala packages
+  ansible.builtin.shell: cs install {{ item }}
+  loop:
+    - scala3-compiler
+    - scala3-repl
+    - ammonite
+    - sbt
