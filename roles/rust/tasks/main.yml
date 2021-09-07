@@ -8,6 +8,6 @@
   when: not rustup.stat.exists
 
 - name: Updating rust toolchain
-  ansible.builtin.shell: rustup update
+  ansible.builtin.shell: source ~/.zshrc && rustup update
   when: rustup.stat.exists
 
