@@ -3,9 +3,18 @@
     path: ~/.nvm
   register: nvm
 
-- name: Installing nvm
+- name: Install nvm
   ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
   when: not nvm.stat.exists
+
+- name: Configure nvm with zshrc
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    regexp: "{{ item.regexp }} "
+    line: "{{ item.line }} "
+  loop:
+    - { regexp: '^export NVM_HOME=', line: 'export NVM_DIR="$HOME/.nvm"' }
+    - { regexp: '^[[ -s "$NVM_DIR/nvm.sh" ]]', line: '[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"' }
 
 - name: Installing node.js
   ansible.builtin.shell: nvm install node
