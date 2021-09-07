@@ -1,0 +1,5 @@
+- name: Installing VSCode
+  community.general.homebrew_cask:
+    name: firefox
+    state: present
+    accept_external_apps: true
