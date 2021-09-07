@@ -4,7 +4,7 @@
   register: rustup
 
 - name: Installing rustup
-  ansible.builtin.shell: sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" "-y"
+  ansible.builtin.shell: sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" "" -y
   when: not rustup.stat.exists
 
 - name: Updating rust toolchain
