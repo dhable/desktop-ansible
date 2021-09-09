@@ -26,3 +26,6 @@
     - gh
     - zsh
     - rlwrap
+    - neovim
+    - ctop
+    - lazydocker
