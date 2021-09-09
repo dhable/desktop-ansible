@@ -3,8 +3,9 @@
     # Programming Languages
     - rust
     - nodejs
-    # - clojure
-    # - scala
+    - java
+    - clojure
+    - scala
 
     # Desktop Applications
     - firefox
