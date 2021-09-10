@@ -11,8 +11,4 @@
 
 - name: Installing VSCode Extensions
   ansible.builtin.shell: code --force --install-extension {{ item }}
-  with_items:
-    - scalameta.metals
-    - rust-lang.rust
-    - golang.go
-    - nwolverson.ide-purescript
+  loop: "{{ plugins }}"

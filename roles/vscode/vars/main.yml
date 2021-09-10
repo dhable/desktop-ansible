@@ -1,0 +1,5 @@
+plugins:
+  - scalameta.metals
+  - rust-lang.rust
+  - golang.go
+  - nwolverson.ide-purescript

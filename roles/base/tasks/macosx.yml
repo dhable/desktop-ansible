@@ -13,19 +13,5 @@
 
 - name: Installing command line tools
   community.general.homebrew:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: latest
-  with_items:
-    - htop
-    - bat
-    - diff-so-fancy
-    - fzf
-    - git
-    - jq
-    - vim
-    - gh
-    - zsh
-    - rlwrap
-    - neovim
-    - ctop
-    - lazydocker

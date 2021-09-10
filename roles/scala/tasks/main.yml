@@ -27,8 +27,4 @@
 
 - name: Install base scala packages
   ansible.builtin.shell: source ~/.zshrc && cs install {{ item }}
-  loop:
-    - scala3-compiler
-    - scala3-repl
-    - ammonite
-    - sbt
+  loop: "{{ packages }}"

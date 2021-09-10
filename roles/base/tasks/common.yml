@@ -12,10 +12,4 @@
     path: ~/.zshrc
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
-  loop:
-    - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
-    - { regexp: '^DISABLE_UPDATE_PROMPT=', line: 'DISABLE_UPDATE_PROMPT="true"' }
-    - { regexp: '^COMPLETION_WAITING_DOTS=', line: 'COMPLETION_WAITING_DOTS="true"' }
-    - { regexp: '^plugins=', line: 'plugins=(git cargo fzf node zsh_reload)' }
-    - { regexp: '^bindkey', line: 'bindkey -v' }
-    - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }
+  loop: "{{ zshrc_cfg }}"

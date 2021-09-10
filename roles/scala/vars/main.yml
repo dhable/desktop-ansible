@@ -1,0 +1,5 @@
+packages:
+  - scala3-compiler
+  - scala3-repl
+  - ammonite
+  - sbt
