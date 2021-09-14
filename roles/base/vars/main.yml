@@ -21,3 +21,6 @@ zshrc_cfg:
   - { regexp: '^plugins=', line: 'plugins=(git cargo fzf node zsh_reload)' }
   - { regexp: '^bindkey', line: 'bindkey -v' }
   - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }
+
+global_gitignore:
+  - workspace.code-workspace
