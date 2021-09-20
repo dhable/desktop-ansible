@@ -26,5 +26,5 @@
   when: cs_exist_check.rc == 0
 
 - name: Install base scala packages
-  ansible.builtin.shell: source ~/.zshrc && cs install {{ item }}
+  ansible.builtin.shell: cs install {{ item }}
   loop: "{{ packages }}"

@@ -13,5 +13,5 @@
 
 - name: Installing command line tools
   community.general.homebrew:
-    name: "{{ packages }}"
+    name: "{{ common_packages + macosx_packages }}"
     state: latest

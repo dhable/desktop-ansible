@@ -19,3 +19,7 @@
 - name: Installing node.js
   ansible.builtin.shell: source ~/.zshrc && nvm install node
   when: not nvm.stat.exists
+
+- name: Install global node tools
+  ansible.builtin.shell: npm install -g  {{ item }}
+  loop: "{{ global_node_packages }}"

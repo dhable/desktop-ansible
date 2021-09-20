@@ -1,4 +1,4 @@
-packages:
+common_packages:
   - htop
   - bat
   - diff-so-fancy
@@ -13,6 +13,9 @@ packages:
   - ctop
   - lazydocker
   - make
+
+macosx_packages:
+  - dockutil
 
 zshrc_cfg:
   - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
