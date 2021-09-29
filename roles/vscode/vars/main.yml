@@ -3,3 +3,4 @@ plugins:
   - rust-lang.rust
   - golang.go
   - nwolverson.ide-purescript
+  - coenraads.bracket-pair-colorizer-2
