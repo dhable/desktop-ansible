@@ -1,6 +1,6 @@
 plugins:
   - scalameta.metals
-  - rust-lang.rust
+  - matklad.rust-analyzer
   - golang.go
   - nwolverson.ide-purescript
   - coenraads.bracket-pair-colorizer-2
