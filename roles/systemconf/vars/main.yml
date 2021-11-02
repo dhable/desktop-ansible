@@ -1,12 +1,13 @@
 macosx_dock_items:
-  - "\"/Applications/System Preferences.app\""
-  - /Applications/Music.app
-  - /Applications/Podcasts.app
+  - "\"/System/Applications/System Preferences.app\""
+  - /System/Applications/Music.app
+  - /System/Applications/Podcasts.app
   - /Applications/Slack.app
+  - /Applications/Joplin.app
   - /Applications/Firefox.app
   - /Applications/iTerm.app
   - "\"/Applications/Visual Studio Code.app\""
-  - /Applications/Joplin.app
+  - /Applications/Steam.app
 
 macosx_defaults_items:
   - { domain: "com.apple.dock",        prop: "tilesize",                             type: "int",    value: "30"    }

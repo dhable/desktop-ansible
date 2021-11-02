@@ -2,9 +2,6 @@
   ansible.builtin.shell: /usr/local/bin/dockutil --remove all
 
 - name: Set the default dock items
-  ansible.builtin.shell: /usr/local/bin/dockutil --add {{ item }} --no-restart
+  ansible.builtin.shell: /usr/local/bin/dockutil --add {{ item }}
   loop: "{{ macosx_dock_items }}"
 
-- name: Set the defaults system configuration items
-  ansible.builtin.shell: deaults write {{ item.domain }} {{ item.prop }} {{ "-" + item.type }} {{ item.value }}
-  loop: "{{ macosx_defaults_items }}"
