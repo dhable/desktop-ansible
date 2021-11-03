@@ -2,6 +2,10 @@
   import_tasks: macosx.yml
   when: ansible_facts['os_family']|lower == 'darwin'
 
+- name: Linux specific tasks
+  import_tasks: linux.yml
+  when: ansible_facts['os_family']|lower == 'linux'
+
 - name: Common tasks
   import_tasks: common.yml
 
