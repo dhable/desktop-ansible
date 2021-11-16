@@ -1,0 +1,11 @@
+- name: Install command line tools
+  become: yes
+  ansible.builtin.dnf:
+    name: "{{ common_packages + redhat_packages }}"
+    state: latest
+
+- name: Change user shell to zsh 
+  become: yes
+  ansible.builtin.user:
+    name: "{{ current_user }}"
+    shell: /bin/zsh

@@ -1,21 +1,23 @@
 common_packages:
   - htop
   - bat
-  - diff-so-fancy
   - fzf
   - git
   - jq
-  - nvim
-  - gh
   - zsh
   - rlwrap
   - neovim
-  - ctop
-  - lazydocker
   - make
 
 macosx_packages:
+  - diff-so-fancy
+  - gh
+  - ctop
+  - lazydocker
   - dockutil
+
+redhat_packages:
+  - valgrind
 
 zshrc_cfg:
   - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
