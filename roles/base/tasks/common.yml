@@ -16,6 +16,7 @@
 
 - name: Entries in gitignore file
   ansible.builtin.lineinfile:
+    create: yes
     path: ~/.gitignore
     regexp: "{{ item }}"
     line: "{{ item }}"
