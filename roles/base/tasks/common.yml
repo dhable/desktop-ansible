@@ -13,14 +13,3 @@
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   loop: "{{ zshrc_cfg }}"
-
-- name: Entries in gitignore file
-  ansible.builtin.lineinfile:
-    create: yes
-    path: ~/.gitignore
-    regexp: "{{ item }}"
-    line: "{{ item }}"
-  loop: "{{ global_gitignore }}"
-
-- name: Setup global gitignore file
-  ansible.builtin.shell: git config --global core.excludesfile $HOME/.gitignore

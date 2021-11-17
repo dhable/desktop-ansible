@@ -1,11 +1,15 @@
 - hosts: localhost
+  vars:
+    current_user: "{{ ansible_user_id }}"
   roles:
+    - git
+
     # Programming Languages
     - rust
     - nodejs
     - java
     - clojure
-    - scala
+    # - scala
 
     # Desktop Applications
     - firefox

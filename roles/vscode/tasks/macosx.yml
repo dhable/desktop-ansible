@@ -8,7 +8,3 @@
   ansible.builtin.lineinfile:
     path: ~/.zshrc
     line: 'export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
-
-- name: Installing VSCode Extensions
-  ansible.builtin.shell: code --force --install-extension {{ item }}
-  loop: "{{ plugins }}"

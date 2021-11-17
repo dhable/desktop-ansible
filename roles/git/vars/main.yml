@@ -1,0 +1,10 @@
+gitignore_entries:
+  - workspace.code-workspace
+
+conf_entries:
+  - {key: "user.email", value: "\"dan@danhable.com\""}
+  - {key: "user.name", value: "\"Dan Hable\""}
+  - {key: "core.editor", value: "nvim"}
+  - {key: "core.excludesfile", value: "$HOME/.gitignore"}
+  - {key: "core.pager", value: "bat"}  
+ 

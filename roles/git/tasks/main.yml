@@ -1,0 +1,11 @@
+- name: Global gitignore entries
+  ansible.builtin.lineinfile:
+    create: yes
+    path: ~/.gitignore
+    regexp: "{{ item }}"
+    line: "{{ item }}"
+  loop: "{{ gitignore_entries }}"
+
+- name: Apply git config settings
+  ansible.builtin.shell: git config --global {{ item.key }} {{ item.value }}
+  loop: "{{ conf_entries }}"
