@@ -8,8 +8,6 @@
     - rust
     - nodejs
     - java
-    - clojure
-    # - scala
 
     # Desktop Applications
     - firefox

@@ -1,5 +1,4 @@
 plugins:
-  - scalameta.metals
   - matklad.rust-analyzer
   - golang.go
   - nwolverson.ide-purescript
