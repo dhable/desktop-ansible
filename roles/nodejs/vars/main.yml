@@ -1,2 +1,5 @@
 global_node_packages:
   - "\"@apidevtools/swagger-cli\""
+  - purescript
+  - spago
+  - purty
