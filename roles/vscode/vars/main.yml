@@ -2,4 +2,3 @@ plugins:
   - matklad.rust-analyzer
   - golang.go
   - nwolverson.ide-purescript
-  - coenraads.bracket-pair-colorizer-2
