@@ -23,6 +23,6 @@ zshrc_cfg:
   - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
   - { regexp: '^DISABLE_UPDATE_PROMPT=', line: 'DISABLE_UPDATE_PROMPT="true"' }
   - { regexp: '^COMPLETION_WAITING_DOTS=', line: 'COMPLETION_WAITING_DOTS="true"' }
-  - { regexp: '^plugins=', line: 'plugins=(git cargo fzf node)' }
+  - { regexp: '^plugins=', line: 'plugins=(git rust fzf node)' }
   - { regexp: '^bindkey', line: 'bindkey -v' }
   - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }
