@@ -3,3 +3,4 @@ global_node_packages:
   - purescript
   - spago
   - purty
+  - eslint
