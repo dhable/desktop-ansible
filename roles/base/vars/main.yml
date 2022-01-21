@@ -26,3 +26,5 @@ zshrc_cfg:
   - { regexp: '^plugins=', line: 'plugins=(git rust fzf node)' }
   - { regexp: '^bindkey', line: 'bindkey -v' }
   - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }
+  - { regexp: 'CC=clang', line: 'export CC=clang'}
+  - { regexp: 'CXX=clang\+\+', line: 'export CXX=clang++'}
