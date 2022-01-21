@@ -2,3 +2,5 @@ plugins:
   - matklad.rust-analyzer
   - golang.go
   - nwolverson.ide-purescript
+  - nwolverson.language-purescript
+  - waderyan.nodejs-extension-pack
