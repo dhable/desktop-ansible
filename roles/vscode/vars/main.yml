@@ -4,3 +4,4 @@ plugins:
   - nwolverson.ide-purescript
   - nwolverson.language-purescript
   - waderyan.nodejs-extension-pack
+  - streetsidesoftware.code-spell-checker

@@ -1,28 +1,28 @@
-macosx_dock_items:
-  - "\"/System/Applications/System Preferences.app\""
-  - /System/Applications/Music.app
-  - /System/Applications/Podcasts.app
-  - /Applications/Slack.app
-  - /Applications/Joplin.app
-  - /Applications/Firefox.app
-  - /Applications/iTerm.app
-  - "\"/Applications/Visual Studio Code.app\""
-  - /Applications/Steam.app
-
-macosx_defaults_items:
-  - { domain: "com.apple.dock",        prop: "tilesize",                             type: "int",    value: "30"    }
-  - { domain: "com.apple.dock",        prop: "magnification",                        type: "bool",   value: "true"  }
-  - { domain: "com.apple.dock",        prop: "minimize-to-application",              type: "bool",   value: "false" }
-  - { domain: "com.apple.dock",        prop: "orientation",                          type: "string", value: "right" }
-  - { domain: "com.apple.dock",        prop: "autohide",                             type: "bool",   value: "false" }
-  - { domain: "com.apple.dock",        prop: "largesize",                            type: "int",    value: "128"   }
-  - { domain: "com.apple.dock",        prop: "show-process-indicators",              type: "bool",   value: "true"  }
-  - { domain: "NSGlobalDomain",        prop: "com.apple.mouse.scaling",              type: "float",  value: "1.5"   }
-  - { domain: "NSGlobalDomain",        prop: "com.apple.scrollwheel.scaling",        type: "float",  value: "0.75"  }
-  - { domain: "NSGlobalDomain",        prop: "AppleMiniaturizeOnDoubleClick",        type: "bool",   value: "false" }
-  - { domain: "NSGlobalDomain",        prop: "AppleInterfaceStyle",                  type: "string", value: "Dark"  }
-  - { domain: "NSGlobalDomain",        prop: "AppleMiniaturizeOnDoubleClick",        type: "bool",   value: "false" }
-  - { domain: "NSGlobalDomain",        prop: "NSAutomaticCapitalizationEnabled",     type: "bool",   value: "false" }
-  - { domain: "NSGlobalDomain",        prop: "NSAutomaticPeriodSubstitutionEnabled", type: "bool",   value: "false" }
+macosx:
+  dock_items:  
+    - "\"/System/Applications/System Preferences.app\""
+    - /System/Applications/Music.app
+    - /System/Applications/Podcasts.app
+    - /Applications/Slack.app
+    - /Applications/Joplin.app
+    - /Applications/Firefox.app
+    - /Applications/iTerm.app
+    - "\"/Applications/Visual Studio Code.app\""
+    - /Applications/Steam.app
+  defaults_items:
+    - { domain: "com.apple.dock",        prop: "tilesize",                             type: "int",    value: "30"    }
+    - { domain: "com.apple.dock",        prop: "magnification",                        type: "bool",   value: "true"  }
+    - { domain: "com.apple.dock",        prop: "minimize-to-application",              type: "bool",   value: "false" }
+    - { domain: "com.apple.dock",        prop: "orientation",                          type: "string", value: "right" }
+    - { domain: "com.apple.dock",        prop: "autohide",                             type: "bool",   value: "false" }
+    - { domain: "com.apple.dock",        prop: "largesize",                            type: "int",    value: "128"   }
+    - { domain: "com.apple.dock",        prop: "show-process-indicators",              type: "bool",   value: "true"  }
+    - { domain: "NSGlobalDomain",        prop: "com.apple.mouse.scaling",              type: "float",  value: "1.5"   }
+    - { domain: "NSGlobalDomain",        prop: "com.apple.scrollwheel.scaling",        type: "float",  value: "0.75"  }
+    - { domain: "NSGlobalDomain",        prop: "AppleMiniaturizeOnDoubleClick",        type: "bool",   value: "false" }
+    - { domain: "NSGlobalDomain",        prop: "AppleInterfaceStyle",                  type: "string", value: "Dark"  }
+    - { domain: "NSGlobalDomain",        prop: "AppleMiniaturizeOnDoubleClick",        type: "bool",   value: "false" }
+    - { domain: "NSGlobalDomain",        prop: "NSAutomaticCapitalizationEnabled",     type: "bool",   value: "false" }
+    - { domain: "NSGlobalDomain",        prop: "NSAutomaticPeriodSubstitutionEnabled", type: "bool",   value: "false" }
 
 

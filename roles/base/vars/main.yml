@@ -1,30 +1,40 @@
-common_packages:
-  - htop
-  - bat
-  - fzf
-  - git
-  - jq
-  - zsh
-  - rlwrap
-  - neovim
-  - make
+packages:
+  common:
+    - htop
+    - bat
+    - fzf
+    - git
+    - jq
+    - zsh
+    - rlwrap
+    - neovim
+    - make
+    - cmake
+    - gh
+  macosx:
+    - diff-so-fancy
+    - ctop
+    - lazydocker
+    - dockutil
+    - pyenv
+    - fd
+  redhat:
+    - fd-find
+    - bcc
+    - pbftrace
 
-macosx_packages:
-  - diff-so-fancy
-  - gh
-  - ctop
-  - lazydocker
-  - dockutil
-
-redhat_packages:
-  - valgrind
-
-zshrc_cfg:
-  - { regexp: '^ZSH_THEME=', line: 'ZSH_THEME="agnoster"' }
-  - { regexp: '^DISABLE_UPDATE_PROMPT=', line: 'DISABLE_UPDATE_PROMPT="true"' }
-  - { regexp: '^COMPLETION_WAITING_DOTS=', line: 'COMPLETION_WAITING_DOTS="true"' }
-  - { regexp: '^plugins=', line: 'plugins=(git rust fzf node)' }
-  - { regexp: '^bindkey', line: 'bindkey -v' }
-  - { regexp: '^ulimit', line: 'ulimit -S -n 4096' }
-  - { regexp: 'CC=clang', line: 'export CC=clang'}
-  - { regexp: 'CXX=clang\+\+', line: 'export CXX=clang++'}
+zsh_conf:
+  common:
+    - { file: '~/.zshrc',    regexp: '^ZSH_THEME=',                     line: 'ZSH_THEME="agnoster"'                }
+    - { file: '~/.zshrc',    regexp: '^DISABLE_UPDATE_PROMPT=',         line: 'DISABLE_UPDATE_PROMPT="true"'        }
+    - { file: '~/.zshrc',    regexp: '^COMPLETION_WAITING_DOTS=',       line: 'COMPLETION_WAITING_DOTS="true"'      }
+    - { file: '~/.zshrc',    regexp: '^plugins=',                       line: 'plugins=(git rust fzf node)'         }
+    - { file: '~/.zshrc',    regexp: '^bindkey',                        line: 'bindkey -v'                          }
+    - { file: '~/.zshrc',    regexp: '^ulimit',                         line: 'ulimit -S -n 4096'                   }
+    - { file: '~/.zshrc',    regexp: 'CC=clang',                        line: 'export CC=clang'                     }
+    - { file: '~/.zshrc',    regexp: 'CXX=clang\+\+',                   line: 'export CXX=clang++'                  }
+    - { file: '~/.zshrc',    regexp: '^eval \"$(pyenv init',            line: 'eval \"$(pyenv init -)\"'            }
+    - { file: '~/.zprofile', regexp: '^eval \"$pyenv init',             line: 'eval \"$(pyenv init --path)\"'       }
+  redhat:
+    - { file: '~/.zprofile', regexp: '^export PYENV_ROOT',              line: 'export PYENV_ROOT=$HOME/.pyenv'      }
+    - { file: '~/.zprofile', regexp: '^export PATH=\"$PYENV_ROOT/bin',  line: 'export PATH="$PYENV_ROOT/bin:$PATH"' }

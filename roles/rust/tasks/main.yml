@@ -11,3 +11,7 @@
   ansible.builtin.shell: rustup update
   when: rustup.stat.exists
 
+- name: Installing cargo tools and packages
+  ansible:builtin:shell: cargo install {{ item }}
+  loop: "{{ install_crates }}"
+

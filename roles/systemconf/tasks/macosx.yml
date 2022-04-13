@@ -3,5 +3,5 @@
 
 - name: Set the default dock items
   ansible.builtin.shell: /usr/local/bin/dockutil --add {{ item }}
-  loop: "{{ macosx_dock_items }}"
+  loop: "{{ macosx.dock_items }}"
 

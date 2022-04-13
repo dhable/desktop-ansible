@@ -7,14 +7,12 @@
   ansible.builtin.shell: bash -c "$(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh)"
   when: not nvm.stat.exists
 
-- name: Configure nvm with zshrc
+- name: Configure nvm with zsh
   ansible.builtin.lineinfile:
-    path: ~/.zshrc
-    regexp: "{{ item.regexp }} "
-    line: "{{ item.line }} "
-  loop:
-    - { regexp: '^export NVM_HOME=', line: 'export NVM_DIR="$HOME/.nvm"' }
-    - { regexp: '^[[ -s "$NVM_DIR/nvm.sh" ]]', line: '[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"' }
+    path: "{{ item.file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop: "{{ zsh_conf }}"
 
 - name: Installing node.js
   ansible.builtin.shell: source ~/.zshrc && nvm install node
@@ -22,4 +20,4 @@
 
 - name: Install global node tools
   ansible.builtin.shell: npm install -g  {{ item }}
-  loop: "{{ global_node_packages }}"
+  loop: "{{ global_packages }}"

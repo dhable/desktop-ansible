@@ -7,9 +7,9 @@
   ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   when: not omz.stat.exists
 
-- name: Configure shell
+- name: Configure zsh environment (common)
   ansible.builtin.lineinfile:
-    path: ~/.zshrc
+    path: "{{ item.file }}"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
-  loop: "{{ zshrc_cfg }}"
+  loop: "{{ zsh_conf.common }}"

@@ -1,7 +1,13 @@
+- name: Setup external dnf repos
+  become: yes
+  ansible.builtin.shell: 
+    cmd: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+    creates: /etc/yum.repos.d/gh-cli.repo
+
 - name: Install command line tools
   become: yes
   ansible.builtin.dnf:
-    name: "{{ common_packages + redhat_packages }}"
+    name: "{{ packages.common + packages.redhat }}"
     state: latest
 
 - name: Change user shell to zsh 
@@ -9,3 +15,15 @@
   ansible.builtin.user:
     name: "{{ current_user }}"
     shell: /bin/zsh
+
+- name: Install pyenv from github
+  ansible.builtin.git:
+    repo: 'https://github.com/pyenv/pyenv.git'
+    dest: ~/.pyenv
+
+- name: Configure zsh environment (redhat specific)
+  ansible.builtin.lineinfile:
+    path: "{{ item.file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop: "{{ zsh_conf.common }}"

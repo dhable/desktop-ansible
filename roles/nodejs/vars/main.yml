@@ -1,6 +1,10 @@
-global_node_packages:
+global_packages:
   - "\"@apidevtools/swagger-cli\""
   - purescript
   - spago
   - purty
   - eslint
+
+zsh_conf:
+  - { file: '~/.zshrc', regexp: '^export NVM_HOME=',            line: 'export NVM_DIR="$HOME/.nvm"'                         }
+  - { file: '~/.zshrc', regexp: '^[[ -s "$NVM_DIR/nvm.sh" ]]',  line: '[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"'  }
