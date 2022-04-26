@@ -9,4 +9,4 @@ conf_entries:
   - { key: 'core.excludesfile',   value: '$HOME/.gitignore'     }
   - { key: 'core.pager',          value: 'bat'                  }
   - { key: 'diff.external',       value: 'difft'                }
- 
+  - { key: 'init.defaultBranch',  value: 'main'                 }
