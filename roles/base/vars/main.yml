@@ -33,7 +33,7 @@ zsh_conf:
     - { file: '~/.zshrc',    regexp: '^ulimit',                         line: 'ulimit -S -n 4096'                   }
     - { file: '~/.zshrc',    regexp: 'CC=clang',                        line: 'export CC=clang'                     }
     - { file: '~/.zshrc',    regexp: 'CXX=clang\+\+',                   line: 'export CXX=clang++'                  }
-    - { file: '~/.zshrc',    regexp: '^eval \"$(pyenv init',            line: 'eval \"$(pyenv init -)\"'            }
+    - { file: '~/.zshrc',    regexp: '^eval \"$\(pyenv init',           line: 'eval \"$(pyenv init -)\"'            }
     - { file: '~/.zprofile', regexp: '^eval \"$pyenv init',             line: 'eval \"$(pyenv init --path)\"'       }
   redhat:
     - { file: '~/.zprofile', regexp: '^export PYENV_ROOT',              line: 'export PYENV_ROOT=$HOME/.pyenv'      }
