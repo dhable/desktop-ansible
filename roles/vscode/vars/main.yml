@@ -5,3 +5,4 @@ plugins:
   - nwolverson.language-purescript
   - waderyan.nodejs-extension-pack
   - streetsidesoftware.code-spell-checker
+  - bungcip.better-toml
