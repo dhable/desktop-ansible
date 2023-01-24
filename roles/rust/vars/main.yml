@@ -1,3 +1,6 @@
 install_crates:
   - difftastic
   - cargo-watch
+  - tokio-console
+  - sccache
+  - cargo-watch
