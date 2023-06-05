@@ -1,5 +1,0 @@
-- name: Install witch
-  community.general.homebrew_cask:
-    name: witch
-    state: present
-    accept_external_apps: true

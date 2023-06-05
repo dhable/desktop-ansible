@@ -7,7 +7,6 @@
     # Programming Languages
     - rust
     - nodejs
-    - java
 
     # Desktop Applications
     - firefox
@@ -15,7 +14,6 @@
     - vscode
     - virtualbox
     - joplin
-    - witch
 
     # Local System Conf
     - systemconf
