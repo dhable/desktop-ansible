@@ -14,9 +14,3 @@
 - name: Installing cargo tools and packages
   ansible.builtin.shell: cargo install {{ item }}
   loop: "{{ install_crates }}"
-
-- name: Env Vars
-  ansible.builtin.lineinfile:
-    path: ~/.zshrc
-    regexp: export RUSTC
-    line: export RUSTC_WRAPPER=$(`which sccache`)
